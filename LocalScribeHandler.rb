@@ -7,7 +7,7 @@ class LocalScribeHandler < LogfileTransfer::Handler
     @scribe_client = Scribe.new('127.0.0.1:1463')
   end
   def handle log_path, log_fn, line, line_count, pattern
-    @scribe_client.log(line, pattern)
+    @scribe_client.log(line, log_fn[0, log_fn.index('.')])
   end
 end
 
