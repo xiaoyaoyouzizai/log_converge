@@ -1,0 +1,21 @@
+---
+- !ruby/object:LogfileTransfer::FileMonitorObj
+  absolute_path: /data/webroot/log
+  dir_disallow: []
+  file_disallow:
+  - .*
+  file_allow:
+  - \.log\.
+  patterns:
+  - - .*
+    - - !ruby/object:LocalScribeHandler {}
+- !ruby/object:LogfileTransfer::FileMonitorObj
+  absolute_path: /data/webroot/tlog
+  dir_disallow: []
+  file_disallow:
+  - .*
+  file_allow:
+  - \.log\.
+  patterns:
+  - - .*
+    - - !ruby/object:LocalScribeHandler {}
