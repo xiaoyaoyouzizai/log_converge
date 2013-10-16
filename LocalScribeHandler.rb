@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'scribe'
+require 'logfile_transfer'
 
 class LocalScribeHandler < LogfileTransfer::Handler
   def init
